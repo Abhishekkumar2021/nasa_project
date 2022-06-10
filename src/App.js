@@ -4,6 +4,8 @@ import useToggle from'./useToggle'
 import ThemeContext from "./ThemeContext";
 import Theme from './Theme'
 import Navbar from './Navbar';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Home';
 
 
 const StyledApp = styled.div`
@@ -11,21 +13,18 @@ const StyledApp = styled.div`
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	background: ${({ light }) => (light ? Theme.light.background : Theme.dark.background)};
-	color: ${({ light }) => (light ? Theme.light.color : Theme.dark.color)};
-
-  h1{
-    box-shadow: ${Theme.light.shadow}
-  }
+	background: ${({ light }) => (light ? Theme.light.background : Theme.dark.backgroundPrimary)};
+	color: ${({ light }) => (light ? Theme.light.colorPrimary : Theme.dark.colorPrimary)};
 `;
 function App() {
-  console.log(Theme)
   const [light, toggleLight] = useToggle(true);
   return (
 		<ThemeContext.Provider value={[light, toggleLight]}>
 			<StyledApp light={light}>
 				<Navbar />
-        <h1>I am text</h1>
+                <Routes>
+					<Route path='/' element={<Home />} />
+				</Routes>
 			</StyledApp>
 		</ThemeContext.Provider>
   );

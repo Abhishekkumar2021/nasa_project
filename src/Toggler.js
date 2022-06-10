@@ -1,27 +1,30 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import ThemeContext from "./ThemeContext";
+import Theme from "./Theme";
 
 const StyledToggler = styled.div`
 	position: relative;
-	width: 50px;
-	height: 20px;
+	width: 60px;
+	height: 25px;
+	display:flex;
+	align-items:center;
 	border-radius: 25px;
-	background: ${({ light }) => (!light ? "#D4ECDD" : "#242629")};
+	box-shadow:0 0 0 1px  ${({ light }) => (light ? Theme.light.colorSecondary : Theme.dark.colorSecondary)};
+
+	background: ${({ light }) => (light ? Theme.light.backgroundPrimary : Theme.dark.backgroundPrimary)};
 	.ball {
-		width: 20px;
-		height: 20px;
-		background: white;
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+		box-shadow:0 0 0 1px  ${({ light }) => (light ? Theme.light.colorSecondary : Theme.dark.colorSecondary)};
+
+		width: 18px;
+		height: 18px;
+		background: ${({ light }) => (light ? Theme.light.colorSecondary : Theme.dark.colorSecondary)};
 		position: absolute;
-		border-radius: 25px;
-		${(props) => (props.light ? "left:0px" : "left:30px")};
+		border-radius: 18px;
+		${(props) => (props.light ? "left:4px" : "left:38px")};
 		transition: 0.3s ease all;
-		transform: scale(1.2);
-		background: ${({ light }) => (light ? "#D4ECDD" : "#242629")};
-		border: 0.01px solid ${({ light }) => (!light ? "#D4ECDD" : "#242629")};
 		&:hover {
-			transform: scale(1.4);
+			transform: scale(1.6);
 		}
 	}
 `;
