@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ThemeContext from "./ThemeContext";
 import Toggler from "./Toggler";
 import useToggle from "./useToggle";
-import Theme from './Theme'
 import {
 	AiOutlineMenu,
 	AiOutlineClose,
@@ -16,9 +15,9 @@ const StyledNavbar = styled.nav`
 	width: 100%;
 	display:flex;
 	flex-direction: column;
-	box-shadow: ${({ light }) => (light ? Theme.light.shadow : Theme.dark.shadow)};
-	background: ${({ light }) => (light ? Theme.light.backgroundSecondary : Theme.dark.backgroundSecondary)};
-	padding:10px;
+	background: ${(props) => (props.light ? "white" : "#37383a")};
+	padding:20px;
+	box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
 	.top{
 		display: flex;
 		justify-content: space-between;
@@ -30,7 +29,6 @@ const StyledNavbar = styled.nav`
 			}
 			&:active{
 				transform:scale(0.9);
-
 			}
 		}
 	}
@@ -53,7 +51,7 @@ const StyledNavbar = styled.nav`
 
 			a{
 				text-decoration:none;
-				color: ${({ light }) => (light ? Theme.light.colorSecondary : Theme.dark.colorSecondary)};
+				color: ${({ light }) => (light ? "rgba(0, 0, 0, 0.781)" : "white")};
 			}
 		transition:0.3s ease all;
 			&:hover{
@@ -74,6 +72,7 @@ export default function Navbar() {
 		<StyledNavbar light={light} dis={display}>
 			<div className="top">
 				<Toggler />
+				<h1>The Space</h1>
 				{display?<AiOutlineClose id='hamburger' onClick={toggleDisplay} />:<AiOutlineMenu id='hamburger' onClick={toggleDisplay} />}
 			</div>
 			<div className="down">
