@@ -9,7 +9,7 @@ const StyledAPOD = styled.div`
   .img{
     flex:45%;
     img{
-      border-radius:20px;
+      border-radius:10px;
       box-shadow:0 3px 5px rgb(0,0,0,0.1);
       width:100%;
       border:10px solid ${(props) => (props.light ? "white" : "#37383a")};
@@ -46,7 +46,7 @@ function APOD() {
       })
 
     }
-    // fetchData();
+    fetchData();
   },[])
   return (
     <StyledAPOD light={light}>
@@ -55,9 +55,9 @@ function APOD() {
       </div>
       <div className='info'>
         <h1>{data.title}</h1>
-        <h2>- {data.date}</h2>
+        <h2>{data.date}</h2>
         <p>{data.text}</p>
-        <h1> &copy;{data.copy}</h1>
+        <h2> &copy;{data.copy}</h2>
       </div>
     </StyledAPOD>
   )

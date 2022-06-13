@@ -9,7 +9,7 @@ const StyledToggler = styled.div`
 	display:flex;
 	align-items:center;
 	border-radius: 25px;
-	background: ${({ light }) => (light ? "#D4ECDD" : "#242629")};
+	background: ${({ light }) => (light ? "#8484FF" : "rgb(256,256,256,0.8)")};
 	.ball {
 		width: 18px;
 		height: 18px;
