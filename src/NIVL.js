@@ -30,6 +30,7 @@ const StyledDiv = styled.div`
     border-radius: 5px;
     box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
     input{
+      width:300px;
       border: none;
       outline: none;
       padding: 5px;
