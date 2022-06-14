@@ -9,6 +9,8 @@ import {
   AiFillHome,
   AiFillPicture,
 } from "react-icons/ai";
+
+import {BiLibrary} from 'react-icons/bi'
 import { Link } from "react-router-dom";
 
 const StyledNavbar = styled.nav`
@@ -106,6 +108,10 @@ export default function Navbar() {
           <li>
             <AiFillPicture className="icon" />
             <Link to="/apodany">Astronomical picture of any day</Link>
+          </li>
+          <li>
+            <BiLibrary className="icon" />
+            <Link to="/nivl">Nasa image & video library</Link>
           </li>
         </ul>
       </div>

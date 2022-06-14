@@ -47,9 +47,6 @@ const StyledAPOD = styled.div`
       padding: 10px;
       width: fit-content;
       background: ${(props) => (props.light ? "white" : "#37383a")};
-      font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
     }
     .icon {
       background: ${(props) => (props.light ? "white" : "#37383a")};

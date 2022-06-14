@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import APOD from './APOD';
 import APODAny from './APODAny';
+import NIVL from './NIVL';
 
 
 const StyledApp = styled.div`
@@ -28,6 +29,7 @@ function App() {
                 <Routes>
 					<Route exact path='/apod' element={<APOD />} />
 					<Route exact path='/apodany' element={<APODAny />} />
+					<Route exact path='/nivl' element={<NIVL />} />
 					<Route path='/' element={<Home />} />
 				</Routes>
 			</StyledApp>
