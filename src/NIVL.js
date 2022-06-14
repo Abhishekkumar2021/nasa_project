@@ -99,7 +99,7 @@ const StyledDiv = styled.div`
       align-items: center;
       width: 100%;
       justify-content: center;
-      color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
+      color: ${({ light }) => (light ? "orange" : "skyblue")};
       border-bottom: 1px solid ${({ light }) => (light ? "#8484FF" : "skyblue")};
       padding: 10px;
       .icon {
