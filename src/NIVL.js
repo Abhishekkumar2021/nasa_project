@@ -23,6 +23,7 @@ const StyledDiv = styled.div`
     top: 10px;
     background: ${(props) => (props.light ? "white" : "#37383a")};
     width: fit-content;
+    max-width:100%;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -48,12 +49,14 @@ const StyledDiv = styled.div`
     color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
   }
   .data {
+    width:100%;
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
     gap: 20px;
+    
     .image,
     .video,
     .audio {
@@ -71,35 +74,26 @@ const StyledDiv = styled.div`
         border-radius: 10px;
         width: 100%;
       }
-      h2 {
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s ease all;
+      h3 {
+        padding: 10px 20px;
       }
       p {
         padding: 0 20px 20px 20px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
       }
     }
-    .image {
-      h2 {
-        background: rgba(256, 256, 256, 0.2);
-        padding: 20px;
-        color: white;
-        margin: 0 5px;
-        margin-top: -86px;
-        &:hover {
-          background: ${(props) => (props.light ? "white" : "#37383a")};
-          color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
-        }
-      }
-    }
+
     .video,
     .audio {
-      h2 {
+      audio{
+        max-width:96%;
+      }
+      h3 {
         padding: 10px 20px;
       }
     }
-    h1 {
+    h2 {
       display: flex;
       align-items: center;
       width: 100%;
@@ -109,6 +103,7 @@ const StyledDiv = styled.div`
       padding: 10px;
       .icon {
         margin-right: 10px;
+        font-size:32px;
       }
     }
     .audio {
@@ -256,44 +251,44 @@ function NIVL() {
       ) : (
         <div className="data">
           {data.images.length !== 0 && (
-            <h1>
+            <h2>
               <AiOutlinePicture className="icon" /> The image data from NASA
-            </h1>
+            </h2>
           )}
 
           {data.images.map((item,idx) => (
             <div className="image" key={idx}>
               <img src={item.src} alt="images from nasa" />
-              <h2>{item.title}</h2>
+              <h3>{item.title}</h3>
               <p>{item.des}</p>
             </div>
           ))}
           {data.videos.length !== 0 && (
-            <h1>
+            <h2>
               <BsFillCameraVideoFill className="icon" />
               The video data from NASA
-            </h1>
+            </h2>
           )}
           {data.videos.map((item,idx) => (
             <div className="video" key={idx}>
               <video controls>
                 <source src={item.src} />
               </video>
-              <h2>{item.title}</h2>
+              <h3>{item.title}</h3>
               <p>{item.des}</p>
             </div>
           ))}
           {data.audios.length !== 0 && (
-            <h1>
+            <h2>
               <AiTwotoneAudio className="icon" /> The audio data from NASA
-            </h1>
+            </h2>
           )}
           {data.audios.map((item,idx) => (
             <div className="audio" key={idx}>
               <audio controls>
                 <source src={item.src} />
               </audio>
-              <h2>{item.title}</h2>
+              <h3>{item.title}</h3>
               <p>{item.des}</p>
             </div>
           ))}
