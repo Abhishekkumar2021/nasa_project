@@ -15,6 +15,9 @@ import {BiLibrary} from 'react-icons/bi'
 import { Link } from "react-router-dom";
 
 const StyledNavbar = styled.nav`
+position:sticky;
+top:0;
+z-index:50;
   width: 100%;
   display: flex;
   flex-direction: column;

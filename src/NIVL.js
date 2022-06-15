@@ -43,11 +43,6 @@ const StyledDiv = styled.div`
     }
   }
 
-  .loading {
-    font-size: 200px;
-    animation: rotate 2s linear infinite;
-    color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
-  }
   .data {
     width:100%;
     margin-top: 50px;
@@ -76,6 +71,8 @@ const StyledDiv = styled.div`
       }
       h3 {
         padding: 10px 20px;
+        color: ${({ light }) => light ? "black" : "white"};
+
       }
       p {
         padding: 0 20px 20px 20px;
@@ -98,7 +95,7 @@ const StyledDiv = styled.div`
       align-items: center;
       width: 100%;
       justify-content: center;
-      color: ${({ light }) => (light ? "orange" : "skyblue")};
+      color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
       border-bottom: 1px solid ${({ light }) => (light ? "#8484FF" : "skyblue")};
       padding: 10px;
       .icon {
@@ -132,14 +129,13 @@ const StyledDiv = styled.div`
       }
     }
   }
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(359deg);
-    }
+  .lds-roller div:after{
+    background: ${({ light }) => (light ? "#8484FF" : "skyblue")};
+
   }
+
+
+
 `;
 
 function NIVL() {
@@ -157,7 +153,7 @@ function NIVL() {
     setValue(e.target.value);
   };
 
-  const fillData = async (id) => {
+  const fillData = async () => {
     const fetchData = async () => {
       const res = await axios.get(
         `https://images-api.nasa.gov/search?q=${value}&page=${data.page}`
@@ -207,16 +203,7 @@ function NIVL() {
             des: item.data[0].description || item.data[0].description_508,
           });
       }
-      if (id === "initial")
-        setData({
-          totalPage,
-          page,
-          images,
-          videos,
-          audios,
-        });
-      else
-        setData({
+      setData({
           totalPage,
           page,
           images: [...data.images, ...images],
@@ -229,11 +216,11 @@ function NIVL() {
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    fillData("initial");
+    fillData();
   };
 
   const handleClick = ()=>{
-    fillData("not-initial");
+    fillData();
   }
   return (
     <StyledDiv light={light}>
@@ -247,7 +234,7 @@ function NIVL() {
         <BiSearchAlt className="icon" />
       </form>
       {isLoading ? (
-        <div className="lds-roller loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>      ) : (
+           <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>   ) : (
         <div className="data">
           {data.images.length !== 0 && (
             <h2>
@@ -257,7 +244,7 @@ function NIVL() {
 
           {data.images.map((item,idx) => (
             <div className="image" key={idx}>
-              <img src={item.src} alt="images from nasa" />
+              <img src={item.src} alt={item.title} />
               <h3>{item.title}</h3>
               <p>{item.des}</p>
             </div>
