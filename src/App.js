@@ -8,6 +8,7 @@ import Home from './Home';
 import APOD from './APOD';
 import APODAny from './APODAny';
 import NIVL from './NIVL';
+import PBR from './PBR';
 
 
 const StyledApp = styled.div`
@@ -29,6 +30,7 @@ function App() {
 					<Route exact path='/apod' element={<APOD />} />
 					<Route exact path='/apodany' element={<APODAny />} />
 					<Route exact path='/nivl' element={<NIVL />} />
+					<Route exact path='/pbr' element={<PBR />} />
 					<Route path='/' element={<Home />} />
 				</Routes>
 			</StyledApp>

@@ -9,6 +9,7 @@ import {
   AiFillHome,
   AiFillPicture,
 } from "react-icons/ai";
+import {GiCardPick, GiRobotGolem} from 'react-icons/gi'
 
 import {BiLibrary} from 'react-icons/bi'
 import { Link } from "react-router-dom";
@@ -106,12 +107,16 @@ export default function Navbar() {
             <Link to="/apod">Astronomical picture of the day</Link>
           </li>
           <li>
-            <AiFillPicture className="icon" />
+            <GiCardPick className="icon" />
             <Link to="/apodany">Astronomical picture of any day</Link>
           </li>
           <li>
             <BiLibrary className="icon" />
             <Link to="/nivl">Nasa image & video library</Link>
+          </li>
+          <li>
+            <GiRobotGolem className="icon" />
+            <Link to="/pbr">Photos taken by rovers on Mars</Link>
           </li>
         </ul>
       </div>

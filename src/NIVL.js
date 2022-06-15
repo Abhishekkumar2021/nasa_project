@@ -5,7 +5,6 @@ import { BsFillCameraVideoFill } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import {
   AiOutlineCloudDownload,
-  AiOutlineLoading3Quarters,
   AiOutlinePicture,
   AiTwotoneAudio,
 } from "react-icons/ai";
@@ -248,8 +247,7 @@ function NIVL() {
         <BiSearchAlt className="icon" />
       </form>
       {isLoading ? (
-        <AiOutlineLoading3Quarters className="loading"></AiOutlineLoading3Quarters>
-      ) : (
+        <div className="lds-roller loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>      ) : (
         <div className="data">
           {data.images.length !== 0 && (
             <h2>
