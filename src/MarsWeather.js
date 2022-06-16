@@ -34,7 +34,7 @@ border:10px solid ${(props) => (props.light ? "white" : "#37383a")};
 @media only screen and (max-width:484px){
   iframe{
     width:94%;
-    height:70vh;
+    height:60vh;
   }
 }
 
