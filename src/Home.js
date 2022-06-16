@@ -74,11 +74,11 @@ function Home() {
         videos that thas been made by
         <a href="https://en.wikipedia.org/wiki/NASA"> NASA </a>, You can also able
         to know the Weather on the
-        <a href="https://en.wikipedia.org/wiki/mars"> Mars </a> the has been
+        <a href="https://en.wikipedia.org/wiki/mars"> Mars </a> that has been
         provided by the satelite present over there. This application can also
         provide you the imagery that has been taken by the diffrent
         <a href="https://en.wikipedia.org/wiki/rover"> Rovers </a>
-        present on the moon surface. This is all that simply I can explain. Go and explore the application. <span className='emoji' role='img' aria-label="an emoji">✌️</span>
+        present on the <a href="https://en.wikipedia.org/wiki/mars"> Mars </a> surface. This is all that simply I can explain. Go and explore the application. <span className='emoji' role='img' aria-label="an emoji">✌️</span>
       </div>
     </StyledHome>
   );
