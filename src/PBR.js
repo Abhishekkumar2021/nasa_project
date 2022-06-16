@@ -254,7 +254,7 @@ function NIVL() {
                 <h4>Name of the rover <span>{img.rover.name}</span></h4>
                 <h4>Launch date <span>{img.rover.launch}</span></h4>
                 <h4>Landing date <span>{img.rover.landing}</span></h4>
-                <h4>Status <span className={img.rover.status === 'active' ? 'active':'not-active'}>{img.rover.status}</span></h4>
+                <h4>Status <span className={img.rover.status === 'active' || img.rover.status==='complete' ? 'active':'not-active'}>{img.rover.status}</span></h4>
 
               </div>
             </div>

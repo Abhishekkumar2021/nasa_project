@@ -9,6 +9,7 @@ import {
   AiFillHome,
   AiFillPicture,
 } from "react-icons/ai";
+import {TiWeatherShower} from 'react-icons/ti'
 import { GiCardPick, GiRobotGolem } from "react-icons/gi";
 
 import { BiLibrary } from "react-icons/bi";
@@ -131,6 +132,10 @@ export default function Navbar() {
           <li>
             <GiRobotGolem className="icon" />
             <Link to="/pbr">Photos taken by rovers on Mars</Link>
+          </li>
+          <li>
+            <TiWeatherShower className="icon" />
+            <Link to="/weather">Mars Weather</Link>
           </li>
         </ul>
       </div>
