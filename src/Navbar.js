@@ -9,15 +9,15 @@ import {
   AiFillHome,
   AiFillPicture,
 } from "react-icons/ai";
-import {GiCardPick, GiRobotGolem} from 'react-icons/gi'
+import { GiCardPick, GiRobotGolem } from "react-icons/gi";
 
-import {BiLibrary} from 'react-icons/bi'
+import { BiLibrary } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const StyledNavbar = styled.nav`
-position:sticky;
-top:0;
-z-index:50;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ z-index:50;
   padding: 20px;
   box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
   .top {
-	color: ${({ light }) => (light ? "#8484FF" : "rgb(256,256,256,0.8)")};
+    color: ${({ light }) => (light ? "#8484FF" : "rgb(256,256,256,0.8)")};
     display: flex;
     justify-content: space-between;
     #hamburger {
@@ -40,7 +40,7 @@ z-index:50;
     }
   }
   .down {
-    z-index:100;
+    z-index: 100;
     position: absolute;
     top: 80px;
     right: 10px;
@@ -65,23 +65,34 @@ z-index:50;
 
       a {
         text-decoration: none;
-		color: ${({ light }) => (light ? "rgba(0, 0, 0, 0.781)" : "rgb(256,256,256,0.8)")};
+        color: ${({ light }) =>
+          light ? "rgba(0, 0, 0, 0.781)" : "rgb(256,256,256,0.8)"};
       }
       transition: 0.3s ease all;
       &:hover {
-		color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
-		a{
-			color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
-
-
-		}
+        color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
+        a {
+          color: ${({ light }) => (light ? "#8484FF" : "skyblue")};
+        }
+        .icon{
+          animation:rotate 0.3s ease;
+        }
         transform: translateX(-15%);
         box-shadow: -3px 0px 6px rgb(0, 0, 0, 0.1);
       }
       .icon {
         margin-right: 5px;
         font-size: 28px;
+
       }
+    }
+  }
+  @keyframes rotate{
+    0%{
+      transform:rotate(0deg);
+    }
+    100%{
+      transform:rotate(359deg);
     }
   }
 `;
