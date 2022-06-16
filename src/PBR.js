@@ -53,7 +53,7 @@ const StyledDiv = styled.div`
     select {
       color-scheme: ${({ light }) => (light ? "light" : "dark")};
       box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
-      width: 200px;
+      width: 250px;
       border-radius: 10px;
       border: none;
       outline: none;
@@ -145,6 +145,11 @@ const StyledDiv = styled.div`
   .lds-roller div:after {
 
     background: ${({ light }) => (light ? "#8484FF" : "skyblue")};
+  }
+  @media only screen and (max-width:484px){
+    input-security,select{
+      width:150px;
+    }
   }
 `;
 
