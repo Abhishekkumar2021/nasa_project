@@ -10,6 +10,8 @@ import APODAny from './APODAny';
 import NIVL from './NIVL';
 import PBR from './PBR';
 import MarsWeather from './MarsWeather';
+import dotenv from 'dotenv'
+dotenv.config()
 
 
 const StyledApp = styled.div`
