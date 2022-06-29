@@ -36,7 +36,7 @@ function APOD() {
   const [data, setData] = useState({});
   useEffect(()=>{
     const fetchData = async()=>{
-      const res = await axios.get("https://api.nasa.gov/planetary/apod?api_key=kIg4QfhUzRqaLUClJ3Xx67yZxdYhRWdFcbeyt615");
+      const res = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_KEY}`);
       setData({
         title:res.data.title,
         date:res.data.date,

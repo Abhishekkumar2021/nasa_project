@@ -163,9 +163,9 @@ function NIVL() {
   const fillData = async () => {
     const fetchData = async () => {
       const res = await axios.get(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?page=${data.page}&sol=${parseInt(sol)}&api_key=kIg4QfhUzRqaLUClJ3Xx67yZxdYhRWdFcbeyt615`
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?page=${data.page}&sol=${parseInt(sol)}&api_key=${process.env.REACT_APP_KEY}`
       );
-      console.log(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?page=${data.page}&sol=${parseInt(sol)}&api_key=kIg4QfhUzRqaLUClJ3Xx67yZxdYhRWdFcbeyt615`)
+      console.log(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?page=${data.page}&sol=${parseInt(sol)}&api_key=${process.env.REACT_APP_KEY}`)
       const toReturn = res.data.photos;
       return toReturn;
     };

@@ -61,11 +61,10 @@ function APODAny() {
   const [light] = useContext(ThemeContext);
   const [data, setData] = useState({});
   const [date, setDate] = useState("");
-  console.log(date);
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        `https://api.nasa.gov/planetary/apod?api_key=kIg4QfhUzRqaLUClJ3Xx67yZxdYhRWdFcbeyt615&date=${date}`
+        `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_KEY}&date=${date}`
       );
       setData({
         title: res.data.title,
